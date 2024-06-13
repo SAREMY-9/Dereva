@@ -21,6 +21,8 @@ class Test extends Authenticatable
         'officerId',
         'candidateId',
         'theoryTest',
+        'practicalTest',
+        'practicalTestAdmin',
     ];
 
 

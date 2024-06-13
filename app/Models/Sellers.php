@@ -23,13 +23,12 @@ class Sellers extends Authenticatable
         'username',
         'email',
         'password',
-        'picture',
         'address',
+        'results',
         'phone',
         'email_verified_at',
-        'status',
-        'payment-method',
-        'payment_email',
+        
+       
        
     ];
 

@@ -26,7 +26,7 @@
 	.left-side-bar:before{display: block; opacity: 0; visibility: hidden;}
 	.left-side-bar.open:before{opacity: 1; visibility: visible; display: none;}
 	.left-side-bar .brand-logo a{text-align: left; padding: 5px 15px;}
-	.left-side-bar .brand-logo a img, .left-side-bar .brand-logo a .svg{margin: 0;}
+	.left-side-bar .brand-logo a img, .left-side-bar .ntsa-logo .png{margin: 0;}
 	.header-right .brand-logo{display: table;}
 	.header-right .menu-icon{display: block; padding-left: 15px; padding-top: 7px;}
 	.footer-wrap{width: 100%;}

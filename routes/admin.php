@@ -10,6 +10,9 @@ use App\Http\Controllers\AdminController;
 }
 )
 */
+Route::view('/admin/register','back.pages.admin.auth.register'); 
+
+Route::post('/admin/register',[AdminController::class,'admRegister'])->name('admRegister');
 
 Route::prefix('admin')->name('admin.')->group(function(){
 
@@ -30,6 +33,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
 
         Route::view('/home','back.pages.admin.home')->name('home');
         
+
         // admin log out route
         Route::post('logout_handler',[AdminController::class,'logoutHandler'])->name
         ('logout_handler');

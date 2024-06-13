@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -54,13 +53,13 @@
 				class="container-fluid d-flex justify-content-between align-items-center"
 			>
 				<div class="brand-logo">
-					<a href="login.html">
-						<img src="/back/vendors/images/deskapp-logo.svg" alt="" />
+					<a href="{{route('admin.home')}}">
+						<img src="/back/vendors/images/ntsa logo.png" alt="" />
 					</a>
 				</div>
 				<div class="login-menu">
 					<ul>
-						<li><a href="register.html">Register</a></li>
+						<li><a href="{{route('admRegister')}}">Register</a></li>
 					</ul>
 				</div>
 			</div>

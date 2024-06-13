@@ -2,7 +2,20 @@
 @section('pageTitle', Isset($pageTitle) ? $pageTitle : 'DEREVA')
 @section('content')
 
+
+      
+
     <div class="login-box bg-white box-shadow border-radius-10">
+
+        @if(session('error'))
+
+      <div class="alert alert-danger">
+
+        {{session('error')}}   
+
+      </div>
+
+      @endif
         <div class="login-title">
             <h2 class="text-center text-primary">Admin Login</h2>
         </div>

@@ -4,10 +4,10 @@
 
 
 <form-group>
-<form action="{{route('doneTest')}}"  method="POST">
+<form action="{{route('theoryTest')}}"  method="POST">
 
     @csrf
-<h6>DRIVER'S TEST PART I</h6><br>
+<h6>THEORY-TEST PART I</h6><br>
     <label>Enter LearnerID</label>
     <input type="text"  name="candidateId"  value="" placeholder="WY2v8#......"><br><br>
     <label>Enter Officer ID.</label>
@@ -21,7 +21,7 @@
 
     </select>
     <br><hr>
-     <button type="submit" class="btn btn-secondary">Submit Score</button>
+     <button type="submit" class="btn btn-success">Submit Score</button>
      
      <br>
      <br>

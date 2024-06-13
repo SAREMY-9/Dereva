@@ -6,12 +6,57 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
 
+use App\Models\Admins;
+
 class AdminController extends Controller
 {
+
+
+    public function admRegister(Request $request){
+
+
+
+
+//        dd($request);
+
+        $request->validate([
+
+            'name'=>['required','min:6','max:45'],  
+            'idNo'=>['required','min:8','max:10'],
+            'email'=>['required'],
+            'password'=>['required','min:8','max:45'],
+            
+        ]);
+
+        $admin = Admins::create([
+
+            'name'=>$request->name,
+            'idNo'=>$request->idNo,
+            'email'=>$request->email,
+            'password'=>$request->password,
+            
+        ]);
+
+     if($admin){
+
+        session()->flash('success','Account registration succesful!');
+
+        return redirect()->route('admin.home');
+        
+     }
+
+     else{
+
+        return view('admRegister');
+
+     }
+
+        
+    }
     
     public function loginHandler(Request $request ){
 
-        $fieldType= filter_var($request->login_id, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+        $fieldType= filter_var($request->login_id, FILTER_VALIDATE_EMAIL) ? 'email' : 'name';
 
         if($fieldType=='email'){
 
@@ -22,7 +67,7 @@ class AdminController extends Controller
         ],
     [
 
-         'login_id.required'=>'Email or Username is required',
+         'login_id.required'=>'Email or name is required',
          'login_id.email'=>'Invalid email address',
          'login_id.exists'=>'Email does not exist in our system',
          'password.required'=>'Password is required'
@@ -34,20 +79,18 @@ class AdminController extends Controller
 
 
             $request->validate([
-                'login_id'=>'required|exists:admins,username',
+                'login_id'=>'required|exists:admins,name',
                 'password'=>'required|min:8|max:45'
 
             ],[
 
 
-                'login_id.required'=>'Email or Username is required',
-                'login_id.exists'=>'Username does not exist in our system',
+                'login_id.required'=>'Email or name is required',
+                'login_id.exists'=>'Name does not exist in our system',
                 'password.required'=>'Password is required'
             ]);
         }
 
-        //after validation is  done now check the credentials entered
-        //continue from here sasa kesho 19/03/24
 
         $creds= array(
 
@@ -76,12 +119,10 @@ class AdminController extends Controller
 
     }
 
-  //kula pause,its time for the test.
-
   
     public function sendPasswordResetLink(Request $request){
          $request->validate([
-            'email'=>'required|email|exits:admins,email'
+            'email'=>'required|email|exists:admins,email'
          ],[
 
             'email.required'=>'The :attribute is required',

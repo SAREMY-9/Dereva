@@ -15,8 +15,10 @@ return new class extends Migration
         Schema::create('tests', function (Blueprint $table) {
             $table->id();
             $table->foreignId('officerId')->constrained('admins');
-            $table->foreignId('candidateId')->constrained('sellers');
-            $table->string('theoryTest'); 
+            $table->foreignId('candidateId')->unique()->constrained('sellers'); 
+            $table->string('theoryTest');
+            $table->string('practicalTest')->nullable();
+            $table->string('practicalTestAdmin')->nullable(); 
             $table->timestamps();
         });
     }

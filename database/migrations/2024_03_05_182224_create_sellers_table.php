@@ -17,13 +17,10 @@ return new class extends Migration
             $table->string('username')->unique()->nullable();
             $table->string('email')->unique()->nullable();
             $table->string('password')->nullable();
-            $table->string('picture')->nullable();
             $table->string('phone')->nullable();
             $table->string('address');
-            $table->timestamp('email_verified_at');
-            $table->enum('status',['Pending','Active'])->default('Pending');
-            $table->string('payment_method')->nullable();
-            $table->string('payment_email')->nullable();
+            $table->timestamp('email_verified_at'); 
+            $table->string('results')->nullable()->default('Pending'); 
             $table->timestamps();
         });
     }

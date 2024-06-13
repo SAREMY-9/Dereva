@@ -1,1 +1,8 @@
-This user is dope let them take the test:
+@extends('back.pages.admin.home') 
+@section('pageTitle', Isset($pageTitle) ? $pageTitle : 'DEREVA')
+@section('content')
+
+The user exists!!! 
+
+@endsection
+ 

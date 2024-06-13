@@ -20,7 +20,7 @@ class AdminSeeder extends Seeder
 
         Admins::create([
             'name'=>'Admin'.($i+1),
-            'username'=>'admin' .($i+1),
+            'idNo'=>'2312345' .($i+1),
             'email'=>'admin@gmail.com'.($i+1),
             'password'=>Hash::make('12345678')
         ]);

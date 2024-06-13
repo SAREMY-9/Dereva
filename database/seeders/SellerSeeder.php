@@ -14,7 +14,7 @@ class SellerSeeder extends Seeder
     public function run(): void
     {
         //
-   for($i=0;$i<10;$i++){
+   for($i=0;$i<10;$i++){  
         Sellers::create([
             'name'=>'Airtrendy' .($i+1),
             'username'=>'atw'. ($i+1),
